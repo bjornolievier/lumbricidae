@@ -1,0 +1,2 @@
+MIN_PLAYERS: int = 2
+MAX_PLAYERS: int = 7

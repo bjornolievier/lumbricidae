@@ -1,5 +1,5 @@
-from dice import DiceCollection
-from tile import TileStack
+from lumbricidae.dice import DiceCollection
+from lumbricidae.tile import TileStack
 
 
 class Player:

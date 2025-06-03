@@ -1,6 +1,7 @@
 import pytest
 
-from lumbricidae.game import MAX_PLAYERS, Game
+import lumbricidae.config as config
+from lumbricidae.game import Game
 from lumbricidae.tile import starting_tiles
 
 
@@ -24,7 +25,7 @@ def test_can_add_players(game) -> None:
 @pytest.mark.unit
 def test_cannot_add_more_than_max_players(game) -> None:
     with pytest.raises(ValueError):
-        for i in range(1, MAX_PLAYERS + 2):
+        for i in range(1, config.MAX_PLAYERS + 2):
             game.add_player_by_name(f"P{i}")
 
 @pytest.mark.unit

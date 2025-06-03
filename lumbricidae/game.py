@@ -2,9 +2,7 @@ from enum import Enum
 
 from lumbricidae.player import Player
 from lumbricidae.tile import TileCollection, starting_tiles
-
-MIN_PLAYERS = 2
-MAX_PLAYERS = 7
+import lumbricidae.config as config
 
 class GameState(Enum):
     SETUP = "setup"
@@ -21,7 +19,7 @@ class Game:
         if not self._state == GameState.SETUP:
             raise RuntimeError("Cannot add players after the game has started")
         
-        if self.number_of_players == MAX_PLAYERS:
+        if self.number_of_players == config.MAX_PLAYERS:
             raise ValueError("Cannot add more than {MAX_PLAYERS} players")
         
         self._players.append(Player(player_name))
@@ -48,5 +46,5 @@ class Game:
         pass
     
     def can_start(self) -> bool:
-        return MIN_PLAYERS <= self.number_of_players <= MAX_PLAYERS
+        return config.MIN_PLAYERS <= self.number_of_players <= config.MAX_PLAYERS
     
