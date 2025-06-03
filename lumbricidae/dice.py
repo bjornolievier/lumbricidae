@@ -11,6 +11,13 @@ class DieFace(NamedConstant):
     FIVE = 5
     WORM = 5
 
+    def __int__(self) -> int:
+        return self.value
+
+    @property
+    def is_worm(self) -> bool:
+        return self == DieFace.WORM 
+
 type DiceCollection = dict[DieFace, int]
 
 def roll_dice(n: int) -> list[DieFace]:
