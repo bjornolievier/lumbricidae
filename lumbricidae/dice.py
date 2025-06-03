@@ -11,8 +11,8 @@ class DieFace(NamedConstant):
     FIVE = 5
     WORM = 5
 
-    def __int__(self) -> int:
-        return self.value
+    # def __int__(self) -> int:
+    #     return int(self)
 
     @property
     def is_worm(self) -> bool:
