@@ -15,3 +15,8 @@ def test_player_initial_state() -> None:
     
     assert player.dice == {}
     assert player.tiles == []
+
+@pytest.mark.unit
+def test_player_must_have_name() -> None:
+    with pytest.raises(ValueError):
+        Player("")

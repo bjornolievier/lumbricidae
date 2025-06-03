@@ -4,7 +4,10 @@ from tile import TileStack
 
 class Player:
     def __init__(self, name: str) -> None:
+        if not name:
+            raise ValueError("Player must have a name")
         self._name:str = name
+        
         self._dice:DiceCollection = {}
         self._tiles:TileStack = []
 

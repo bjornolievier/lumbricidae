@@ -37,19 +37,16 @@ def test_game_cannot_start_with_less_than_2_players(game) -> None:
     game.add_player_by_name("P2")
     assert game.can_start()
 
-# @pytest.mark.unit
-# def test_cannot_add_player_with_empty_name(game) -> None:
-#     with pytest.raises(ValueError):
-#         game.add_player_by_name("")
+@pytest.mark.unit
+def test_cannot_add_player_with_empty_name(game) -> None:
+    with pytest.raises(ValueError):
+        game.add_player_by_name("")
 
-# @pytest.mark.unit
-# def test_cannot_add_player_after_game_starts(game) -> None:
-#     game.add_player_by_name("P1")
-#     game.add_player_by_name("P2")
-#     game.start()
+@pytest.mark.unit
+def test_cannot_add_player_after_game_starts(game) -> None:
+    game.add_player_by_name("P1")
+    game.add_player_by_name("P2")
+    game.start()
 
-#     with pytest.raises(RuntimeError):
-#         game.add_player_by_name("P3")
-
-#def test_flip_last_tile(self) -> None:
-#    pass
+    with pytest.raises(RuntimeError):
+        game.add_player_by_name("P3")
