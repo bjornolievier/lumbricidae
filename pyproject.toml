@@ -5,6 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "aenum>=3.1.16",
+    "hypothesis>=6.132.0",
 ]
 
 [dependency-groups]
@@ -20,5 +22,13 @@ dev = [
 
 [tool.pytest.ini_options]
 pythonpath = [
-  "lumbricidae"
+    ".", 
+    "lumbricidae"
+]
+markers = [
+    "unit: Unit tests",
+    "property: Property-based tests", 
+    "integration: Integration tests",
+    "bdd: Behavior-driven tests",
+    "slow: Slow tests"
 ]
